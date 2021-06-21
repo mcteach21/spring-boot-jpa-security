@@ -41,14 +41,28 @@ public class FrontController {
     }
 
 
-    @PostMapping(value="/{action}")
-    public String post(@PathVariable String action, @ModelAttribute Object object){
-        logger.log(Level.INFO, "action = "+action);
-        //        switch (action){
-        //            ...
-        //        }
+    @PostMapping(value="/signup")
+    public String post(@ModelAttribute User user){
+        logger.log(Level.INFO, "user = "+user);
+        userService.add(user);
         return "redirect:"+DEFAULT_PATH;
     }
+//    @PostMapping(value="/{action}")
+//    public String post(@PathVariable String action, @ModelAttribute BaseEntity entity){
+//        logger.log(Level.INFO, "action = "+action);
+//
+//        switch (action){
+//            case "signup":
+//                User user = (User)entity;
+//                logger.log(Level.INFO, "user = "+user);
+//                break;
+//            // ...
+//            default:
+//                break;
+//        }
+//
+//        return "redirect:"+DEFAULT_PATH;
+//    }
     private String formatted(String page) {
         return page.substring(0,1).toUpperCase()+page.substring(1).toLowerCase();
     }

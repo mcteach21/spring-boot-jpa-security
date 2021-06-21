@@ -3,9 +3,9 @@ package mc.apps.spring.jpa;
 import javax.persistence.*;
 
 @Entity(name="users")
-public class User {
+public class User{
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int id;
 
     private String firstname;

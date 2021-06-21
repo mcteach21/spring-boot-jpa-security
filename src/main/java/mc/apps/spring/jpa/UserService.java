@@ -39,4 +39,8 @@ public class UserService implements UserDetailsService {
             throw new UsernameNotFoundException("User not found with login: " + login);
         }
     }
+
+    public void add(User user) {
+        userRepository.save(user);
+    }
 }
