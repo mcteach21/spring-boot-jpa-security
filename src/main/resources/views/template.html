@@ -9,7 +9,25 @@
 <div role="main" class="container">
   <h3>Spring Boot - <span th:text="${title}"></span></h3>
   <div class="alert"  th:classappend="${title=='Admin'}?'alert-warning':'alert-default'">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consectetur corporis hic id iste magni minus modi nobis numquam officia placeat possimus quidem, quos repellat ullam? Aut modi quas quisquam!
+    <p th:if="${items==null}">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquam, assumenda,
+      consequatur corporis cupiditate dolore, ducimus error excepturi
+      expedita magnam modi non nulla omnis pariatur quia quo recusandae reprehenderit vitae.
+    </p>
+
+    <table th:if="${items}" class="table table-bordered" style="width:auto;">
+      <thead class="table-dark">
+        <tr><th>Name</th><th>Description..</th><th>Price</th></tr>
+      </thead>
+      <tbody th:each="item : ${items}" th:remove="tag">
+        <tr>
+          <td th:text="${item.name}"></td>
+          <td th:text="${item.description}"></td>
+          <td th:text="${item.price}">€</td>
+        </tr>
+      </tbody>
+    </table>
+
   </div>
 </div>
 <div th:replace="../templates/main-layout::footer"></div>
