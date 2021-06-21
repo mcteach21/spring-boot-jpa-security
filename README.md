@@ -1,2 +1,4 @@
 # spring-boot-jpa-security
-Spring boot Security + Data JPA
+Spring boot Security + Data JPA 
+
+(authentification via Database)
