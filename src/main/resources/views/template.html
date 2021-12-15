@@ -9,24 +9,16 @@
 <div role="main" class="container">
   <h3>Spring Boot - <span th:text="${title}"></span></h3>
   <div class="alert"  th:classappend="${title=='Admin'}?'alert-warning':'alert-default'">
-    <p th:if="${items==null}">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquam, assumenda,
-      consequatur corporis cupiditate dolore, ducimus error excepturi
-      expedita magnam modi non nulla omnis pariatur quia quo recusandae reprehenderit vitae.
-    </p>
 
-    <table th:if="${items}" class="table table-bordered" style="width:auto;">
-      <thead class="table-dark">
-        <tr><th>Name</th><th>Description..</th><th>Price</th></tr>
-      </thead>
-      <tbody th:each="item : ${items}" th:remove="tag">
-        <tr>
-          <td th:text="${item.name}"></td>
-          <td th:text="${item.description}"></td>
-          <td th:text="${item.price}">€</td>
-        </tr>
-      </tbody>
-    </table>
+<!--     <span class="name" style="display:inline-block;" th:text="${#strings.toLowerCase(title)}"></span>-->
+
+
+<!--     <div th:if="${title!=null}">-->
+<!--          <th:block th:include="../templates/fragments::${#strings.toLowerCase(title)}"/>-->
+<!--     </div>-->
+
+
+      <div th:replace="../templates/main-layout::main-container"></div>
 
   </div>
 </div>

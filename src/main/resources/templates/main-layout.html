@@ -35,9 +35,12 @@
 
 <!--<div th:replace="fragments/header::header" />-->
 
-<!--<main role="main" class="container">-->
-<!--    <th:block th:include="${template}"/>-->
-<!--</main>-->
+
+<main th:fragment="main-container">
+<!--    <span class="name" style="display:inline-block;" th:text="${#strings.toLowerCase(title)}"></span>-->
+<!--    <hr/>-->
+    <th:block th:include="../templates/fragments::${#strings.toLowerCase(title)}"/>
+</main>
 
 <!--<div th:replace="fragments/footer::footer">&copy; 2021 Static Footer</div>-->
 <!--<th:block layout:fragment="optional" />-->

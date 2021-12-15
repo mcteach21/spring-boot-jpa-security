@@ -365,6 +365,7 @@ input:focus{
 .container {
     margin:100px auto;
     max-width:800px;
+    padding: 50px;
 }
 
 .form-search{

@@ -32,11 +32,11 @@ public class FrontController {
 
         if(param!=null){
             model.addAttribute("error", "Bad credentials! try again.");
-            return "login";
+            return "login00";
         }
 
         model.addAttribute("title", (action==null)?"Index":formatted(action));
-        String page = (action==null)?"index":(action.equals("login")?action:"template");
+        String page = (action==null)?"index":"template";  //(action.equals("login")?action:"template");
 
         model.addAttribute("logged", (authentication==null)?"":authentication.getName());
         model.addAttribute("user", new User());

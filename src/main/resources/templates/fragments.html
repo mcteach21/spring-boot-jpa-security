@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="headerfiles">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+</head>
+<body>
+
+<div th:fragment="about">
+    <h1>About</h1> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa dolor laborum molestiae non nostrum omnis rerum saepe voluptas voluptate.
+    Commodi consequatur ea ipsam iusto maxime placeat quidem rem vel?
+</div>
+<div th:fragment="contact">
+    <h1>Contact</h1> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa dolor laborum molestiae non nostrum omnis rerum saepe voluptas voluptate.
+    Commodi consequatur ea ipsam iusto maxime placeat quidem rem vel?
+</div>
+
+<div th:fragment="articles">
+
+    <h1>Articles</h1>
+
+    <table th:if="${items}" class="table table-bordered" style="width:auto;">
+        <thead class="table-dark">
+        <tr><th>Name</th><th>Description..</th><th>Price</th></tr>
+        </thead>
+        <tbody th:each="item : ${items}" th:remove="tag">
+        <tr>
+            <td th:text="${item.name}"></td>
+            <td th:text="${item.description}"></td>
+            <td th:text="${item.price}">€</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div th:fragment="login">
+<!--    <h1>Login</h1>-->
+
+    <div th:replace="../templates/login-form::login-form"></div>
+
+    <div style="max-width: 30%;margin: auto;">
+        <a style="font-size: 120%; padding: 10px;" href="#createModal" class="nav-item nav-link" data-dismiss="modal" data-toggle="modal" ><i class="fa fa-user"></i> Inscription</a>
+    </div>
+</div>
+
+<div th:fragment="admin" class="alert alert-dark">
+    <h1>Admin Area!</h1>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa dolor laborum molestiae non nostrum omnis rerum saepe voluptas voluptate.
+    Commodi consequatur ea ipsam iusto maxime placeat quidem rem vel?
+</div>
+
+</body>
+</html>
