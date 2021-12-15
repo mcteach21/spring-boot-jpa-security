@@ -9,8 +9,14 @@
 <body>
 
 <div th:fragment="about">
-    <h1>About</h1> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa dolor laborum molestiae non nostrum omnis rerum saepe voluptas voluptate.
-    Commodi consequatur ea ipsam iusto maxime placeat quidem rem vel?
+    <h1>About</h1>
+
+    <ul>
+        <li>Spring boot - Security</li>
+        <li>Spring boot - JPA (MySQL)</li>
+        <li>Spring boot - Thymeleaf (Templates Engine)</li>
+        <li>Spring boot - REST-assured (REST APIs : Testing + Validation)</li>
+    </ul>
 </div>
 <div th:fragment="contact">
     <h1>Contact</h1> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem culpa dolor laborum molestiae non nostrum omnis rerum saepe voluptas voluptate.
@@ -36,8 +42,6 @@
 </div>
 
 <div th:fragment="login">
-<!--    <h1>Login</h1>-->
-
     <div th:replace="../templates/login-form::login-form"></div>
 
     <div style="max-width: 30%;margin: auto;">

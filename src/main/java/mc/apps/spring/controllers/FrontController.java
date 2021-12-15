@@ -30,9 +30,12 @@ public class FrontController {
     @RequestMapping(value={"/","/{action}"})
     public String display(@PathVariable(required = false) String action, @RequestParam(name="error", required=false) String param, Model model, Authentication authentication){
 
+        if(action!=null && action.startsWith("/rest")){
+            return "index";
+        }
         if(param!=null){
             model.addAttribute("error", "Bad credentials! try again.");
-            return "login00";
+            return "login";
         }
 
         model.addAttribute("title", (action==null)?"Index":formatted(action));
