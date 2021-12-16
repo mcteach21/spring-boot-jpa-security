@@ -15,4 +15,8 @@ public class ArticleService {
     public List<Article> list() {
         return (List<Article>) articleRepository.findAll();
     }
+
+    public boolean isOk() {
+        return (this.articleRepository!=null);
+    }
 }
